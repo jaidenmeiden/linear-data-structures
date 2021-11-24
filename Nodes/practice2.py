@@ -23,12 +23,11 @@ for word in words.iter():
 
 print("+++++++++++++++++++++++++++")
 print("Search results:")
-print(words.search('spam'))
+print(words.search('span'))
 print(words.search('juice'))
 
-words.clear()
-
 print("+++++++++++++++++++++++++++")
+words.clear()
 print("Print words 3:")
 while current:
     print(current.data)

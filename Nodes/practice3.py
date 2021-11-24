@@ -6,10 +6,11 @@ head = None
 for count in range(1, 3):
     head = CustomNode(count, head)
 # Print the contents of the structure
-
 while head is not None:
     print(head.data)
     head = head.next
+
+print("+++++++++++++++++++++++++++")
 
 """ Main linked lists operations """
 # Traversal with 'probe' as aux. variable
@@ -18,6 +19,8 @@ probe = head
 while probe is not None:
     print(probe.data)
     probe = probe.next
+
+print("+++++++++++++++++++++++++++")
 
 # Search an item
 probe = head
@@ -29,6 +32,8 @@ if probe is not None:
     print(f"Target item {target_item} has been found")
 else:
     print(f"Target item {target_item} is not in the linked list")
+
+print("+++++++++++++++++++++++++++")
 
 # Replacement
 probe = head
@@ -49,6 +54,8 @@ head = CustomNode("F", head)
 # Insert at the end
 new_node = CustomNode("K")
 
+print("+++++++++++++++++++++++++++")
+
 if head is None:
     head = new_node
 else:
@@ -62,6 +69,8 @@ else:
 removed_item = head.data
 head = head.next
 print("Removed item: ", removed_item)
+
+print("+++++++++++++++++++++++++++")
 
 # Remove at the end
 removed_item = head.data
@@ -79,9 +88,19 @@ else:
 
 print("Removed item: ", removed_item)
 
+print("+++++++++++++++++++++++++++")
+
+head = CustomNode("A", head)
+head = CustomNode("B", head)
+head = CustomNode("C", head)
+
 # Insert at any position
 new_item = input("Enter the new item: ")
 index = int(input("Enter the position to insert the new item: "))
+
+print("head: ", head)
+print("index: ", index)
+
 if head is None or index < 0:
     head = CustomNode("Py", head)
 else:
