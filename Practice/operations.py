@@ -4,8 +4,11 @@ Demonstration of common methods for data structures.
 
 # Creating list with different elements
 fruits = []
+print(fruits)
 fruits = ["Isabel"]
+print(fruits)
 fruits = ["Isabel", "Mulan"]
+print(fruits)
 fruits = ["Isabel", "Mulan", 255]
 print(fruits)
 fruits = ["Isabel", ["Mulan", 255]]
