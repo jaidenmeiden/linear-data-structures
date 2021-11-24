@@ -27,7 +27,7 @@ class CustomSingleLinkedList(object):
 
         self.size += 1
 
-    def size(self):
+    def depth(self):
         return str(self.size)
 
     def iter(self):
