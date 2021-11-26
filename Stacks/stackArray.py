@@ -3,7 +3,6 @@ from customStackArray import CustomStackArray
 
 class StackArray:
     def __init__(self, size):
-        self.top = None
         self.size = size
         self.node = CustomStackArray(size)
 
