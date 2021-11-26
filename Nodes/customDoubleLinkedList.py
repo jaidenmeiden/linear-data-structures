@@ -1,4 +1,4 @@
-from customNode import CustomNode
+from customNodeTwoWays import CustomNodeTwoWays
 
 
 class CustomDoubleLinkedList(object):
@@ -9,7 +9,7 @@ class CustomDoubleLinkedList(object):
 
     def append(self, data):
         """ Append an item to the list. """
-        new_node = CustomNode(data, None, None)
+        new_node = CustomNodeTwoWays(data, None, None)
 
         if self.head is None:
             self.head = new_node
@@ -40,14 +40,29 @@ class CustomDoubleLinkedList(object):
                     current.previous.next = current.next
                     current.next.previous = current.previous
                     node_deleted = True
+                    break
 
                 current = current.next
 
-            if node_deleted:
-                self.count -= 1
+        if node_deleted:
+            self.count -= 1
+
+    def iter(self, direction):
+        if direction == 1:
+            current = self.tail
+            while current:
+                val = current.data
+                current = current.previous
+                yield val
+        else:
+            current = self.head
+            while current:
+                val = current.data
+                current = current.next
+                yield val
 
     def contain(self, data):
-        for node_data in self.iter():
+        for node_data in self.iter(1):
             if data == node_data:
                 return True
 
@@ -57,4 +72,4 @@ class CustomDoubleLinkedList(object):
         """ Clear the entire list. """
         self.tail = None
         self.head = None
-        self.size = 0
+        self.count = 0
