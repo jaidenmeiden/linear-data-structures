@@ -31,9 +31,9 @@ track3 = Track("Oh black star")
 track4 = Track("Watch that chicken")
 track5 = Track("Don't go")
 
-print(track1.length)
-print(track2.length)
-print(track3.length)
+print("Time 1: ", track1.length)
+print("Time 2: ", track2.length)
+print("Time 3: ", track3.length)
 
 media_player = MediaPlayerQueue()
 
