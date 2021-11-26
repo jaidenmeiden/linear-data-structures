@@ -18,7 +18,7 @@ class CustomDoubleLinkedList(object):
             new_node.previous = self.tail
             self.tail.next = new_node
             self.tail = new_node
-            self.count += 1
+        self.count += 1
 
     def delete(self, data):
         current = self.head
@@ -47,26 +47,30 @@ class CustomDoubleLinkedList(object):
         if node_deleted:
             self.count -= 1
 
+        return node_deleted
+
     def iter(self, direction):
-        if direction == 1:
+        if direction == 'desc':
             current = self.tail
             while current:
                 val = current.data
                 current = current.previous
                 yield val
-        else:
+        elif direction == 'asc':
             current = self.head
             while current:
                 val = current.data
                 current = current.next
                 yield val
+        else:
+            print("No way!")
 
     def contain(self, data):
-        for node_data in self.iter(1):
+        for node_data in self.iter('desc'):
             if data == node_data:
                 return True
 
-            return False
+        return False
 
     def clear(self):
         """ Clear the entire list. """
